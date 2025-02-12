@@ -29,3 +29,44 @@ notSure='20'
 notSure=true
 notSure=20
 // type any we can use any type of value
+
+let bike1={brand:"honda",color:"black"}
+let bike2={brand:"yamaha",color:"red"}
+let bike3={brand:"suzuki"}
+
+let items:{brand:string,color?:string}[]=[bike1,bike2,bike3]
+
+
+let names:string[]=["abul","babul","kabul"]
+
+function processInput(input:string|number):string|number{
+   if(typeof input === 'string'){
+    return input.toLocaleUpperCase()
+   }
+   else{
+    return input*2
+   }
+} 
+
+console.log(processInput("abul"));
+console.log(processInput(20));
+
+
+function processData(input:string|number,config:{reverse:boolean}){
+ if(typeof input === 'string'){
+  return input.toLocaleUpperCase()
+ }
+ else if(typeof input === 'number'){
+  return input*2
+ }
+ else if(config.reverse && typeof input === 'string'){
+
+    return input
+}
+
+}
+
+
+console.log(processData("abul",{reverse:true}));
+
+
